@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Research &amp; Policy — Horn Bridge Institute</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .pub-card { display:flex; gap:24px; padding:28px; border-radius:var(--radius-xl); background:var(--white); border:1px solid var(--ink-100); transition:all 0.25s; }
+    .pub-card:hover { box-shadow:var(--shadow-md); transform:translateY(-2px); }
+    .pub-card__type { width:56px; height:56px; border-radius:var(--radius-lg); display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0; }
+    .pub-card__meta { font-size:0.8rem; color:var(--ink-300); margin-bottom:6px; }
+    .pub-card__title { font-family:var(--font-display); font-size:1.05rem; font-weight:600; color:var(--ink-900); margin-bottom:8px; }
+    .pub-card__excerpt { font-size:0.88rem; color:var(--ink-500); }
+    .pub-card__footer { display:flex; align-items:center; gap:12px; margin-top:16px; }
+    .theme-pill { padding:6px 16px; border-radius:var(--radius-full); font-size:0.82rem; font-weight:600; cursor:pointer; transition:all 0.2s; border:1.5px solid var(--ink-100); color:var(--ink-500); background:var(--white); }
+    .theme-pill:hover,.theme-pill.active { background:var(--green-700); color:var(--white); border-color:var(--green-700); }
+    .focus-area { padding:28px; border-radius:var(--radius-xl); border:1px solid var(--ink-100); background:var(--white); }
+    .focus-area__num { font-family:var(--font-display); font-size:2.5rem; font-weight:700; color:var(--ink-100); line-height:1; margin-bottom:12px; }
+  </style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDU2MCAxMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHRpdGxlPkhvcm4gQnJpZGdlIEluc3RpdHV0ZSDigJQgSG9yaXpvbnRhbCBMb2dvPC90aXRsZT4KICA8ZGVzYz5GdWxsIGNvbG9yIGhvcml6b250YWwgbG9nbyBmb3IgSG9ybiBCcmlkZ2UgSW5zdGl0dXRlPC9kZXNjPgoKICA8IS0tIEJyaWRnZSBhcmNoIC0tPgogIDxwYXRoIGQ9Ik0yOCA4MiBROTAgMzIgMTUyIDgyIiBmaWxsPSJub25lIiBzdHJva2U9IiMxRDlFNzUiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8IS0tIEJyaWRnZSBkZWNrIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjgyIiB4Mj0iMTU2IiB5Mj0iODIiIHN0cm9rZT0iIzBGNkU1NiIgc3Ryb2tlLXdpZHRoPSIxLjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgoKICA8IS0tIFBpbGxhciAxIC0tPgogIDxyZWN0IHg9IjM1IiB5PSI2NiIgd2lkdGg9IjUuNSIgaGVpZ2h0PSIxNiIgcng9IjEuNSIgZmlsbD0iIzlGRTFDQiIvPgogIDxjaXJjbGUgY3g9IjM3IiBjeT0iNjMiIHI9IjQuNSIgZmlsbD0iIzlGRTFDQiIvPgogIDwhLS0gUGlsbGFyIDIgLS0+CiAgPHJlY3QgeD0iNTciIHk9IjU4IiB3aWR0aD0iNiIgaGVpZ2h0PSIyNCIgcng9IjEuNSIgZmlsbD0iIzVEQ0FBNSIvPgogIDxjaXJjbGUgY3g9IjYwIiBjeT0iNTUiIHI9IjUiIGZpbGw9IiM1RENBQTUiLz4KICA8IS0tIFBpbGxhciAzIGNlbnRlciAtLT4KICA8cmVjdCB4PSI4NyIgeT0iNTIiIHdpZHRoPSI2LjUiIGhlaWdodD0iMzAiIHJ4PSIxLjUiIGZpbGw9IiMxRDlFNzUiLz4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjQ4IiByPSI1LjUiIGZpbGw9IiMxRDlFNzUiLz4KICA8IS0tIFBpbGxhciA0IC0tPgogIDxyZWN0IHg9IjExNyIgeT0iNTgiIHdpZHRoPSI2IiBoZWlnaHQ9IjI0IiByeD0iMS41IiBmaWxsPSIjNURDQUE1Ii8+CiAgPGNpcmNsZSBjeD0iMTIwIiBjeT0iNTUiIHI9IjUiIGZpbGw9IiM1RENBQTUiLz4KICA8IS0tIFBpbGxhciA1IC0tPgogIDxyZWN0IHg9IjEzOSIgeT0iNjYiIHdpZHRoPSI1LjUiIGhlaWdodD0iMTYiIHJ4PSIxLjUiIGZpbGw9IiM5RkUxQ0IiLz4KICA8Y2lyY2xlIGN4PSIxNDEiIGN5PSI2MyIgcj0iNC41IiBmaWxsPSIjOUZFMUNCIi8+CgogIDwhLS0gQ2FibGVzIC0tPgogIDxsaW5lIHgxPSI2MCIgeTE9IjQ2IiB4Mj0iNjAiIHkyPSI4MiIgc3Ryb2tlPSIjMEY2RTU2IiBzdHJva2Utd2lkdGg9IjAuNyIgc3Ryb2tlLWRhc2hhcnJheT0iMiwyIiBvcGFjaXR5PSIwLjQiLz4KICA8bGluZSB4MT0iOTAiIHkxPSI0MCIgeDI9IjkwIiB5Mj0iODIiIHN0cm9rZT0iIzBGNkU1NiIgc3Ryb2tlLXdpZHRoPSIwLjciIHN0cm9rZS1kYXNoYXJyYXk9IjIsMiIgb3BhY2l0eT0iMC40Ii8+CiAgPGxpbmUgeDE9IjEyMCIgeTE9IjQ2IiB4Mj0iMTIwIiB5Mj0iODIiIHN0cm9rZT0iIzBGNkU1NiIgc3Ryb2tlLXdpZHRoPSIwLjciIHN0cm9rZS1kYXNoYXJyYXk9IjIsMiIgb3BhY2l0eT0iMC40Ii8+CgogIDwhLS0gU3VuIC0tPgogIDxjaXJjbGUgY3g9IjkwIiBjeT0iMzQiIHI9IjgiIGZpbGw9IiNFRjlGMjciIG9wYWNpdHk9IjAuMTUiLz4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjM0IiByPSI1LjUiIGZpbGw9IiNFRjlGMjciLz4KICA8bGluZSB4MT0iOTAiIHkxPSIyNSIgeDI9IjkwIiB5Mj0iMjIiIHN0cm9rZT0iI0VGOUYyNyIgc3Ryb2tlLXdpZHRoPSIxLjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxsaW5lIHgxPSI5MCIgeTE9IjQzIiB4Mj0iOTAiIHkyPSI0NiIgc3Ryb2tlPSIjRUY5RjI3IiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9IjgxIiB5MT0iMzQiIHgyPSI3OCIgeTI9IjM0IiBzdHJva2U9IiNFRjlGMjciIHN0cm9rZS13aWR0aD0iMS4zIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iOTkiIHkxPSIzNCIgeDI9IjEwMiIgeTI9IjM0IiBzdHJva2U9IiNFRjlGMjciIHN0cm9rZS13aWR0aD0iMS4zIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iODQiIHkxPSIyNyIgeDI9IjgxIiB5Mj0iMjQiIHN0cm9rZT0iI0VGOUYyNyIgc3Ryb2tlLXdpZHRoPSIxLjEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxsaW5lIHgxPSI5NiIgeTE9IjI3IiB4Mj0iOTkiIHkyPSIyNCIgc3Ryb2tlPSIjRUY5RjI3IiBzdHJva2Utd2lkdGg9IjEuMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9Ijg0IiB5MT0iNDEiIHgyPSI4MSIgeTI9IjQ0IiBzdHJva2U9IiNFRjlGMjciIHN0cm9rZS13aWR0aD0iMS4xIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iOTYiIHkxPSI0MSIgeDI9Ijk5IiB5Mj0iNDQiIHN0cm9rZT0iI0VGOUYyNyIgc3Ryb2tlLXdpZHRoPSIxLjEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgoKICA8IS0tIFZlcnRpY2FsIGRpdmlkZXIgLS0+CiAgPGxpbmUgeDE9IjE3OCIgeTE9IjE2IiB4Mj0iMTc4IiB5Mj0iMTA0IiBzdHJva2U9IiNCNEIyQTkiIHN0cm9rZS13aWR0aD0iMC41Ii8+CgogIDwhLS0gV29yZG1hcmsgLS0+CiAgPHRleHQgeD0iMjAwIiB5PSI1NSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsJ1RpbWVzIE5ldyBSb21hbicsc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSIxIiBmaWxsPSIjMEY2RTU2Ij5Ib3JuIEJyaWRnZTwvdGV4dD4KICA8IS0tIERpdmlkZXIgdW5kZXIgd29yZG1hcmsgLS0+CiAgPGxpbmUgeDE9IjIwMCIgeTE9IjYzIiB4Mj0iNTQwIiB5Mj0iNjMiIHN0cm9rZT0iIzFEOUU3NSIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuNCIvPgogIDwhLS0gSW5zdGl0dXRlIC0tPgogIDx0ZXh0IHg9IjIwMCIgeT0iNzkiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCdUaW1lcyBOZXcgUm9tYW4nLHNlcmlmIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNDAwIiBsZXR0ZXItc3BhY2luZz0iNSIgZmlsbD0iIzVEQ0FBNSI+SU5TVElUVVRFPC90ZXh0PgogIDwhLS0gVGFnbGluZSAtLT4KICA8dGV4dCB4PSIyMDAiIHk9Ijk4IiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iOS41IiBmaWxsPSIjODg4NzgwIiBsZXR0ZXItc3BhY2luZz0iMC4zIj5CcmlkZ2luZyBrbm93bGVkZ2UgYWNyb3NzIHRoZSBIb3JuIG9mIEFmcmljYTwvdGV4dD4KPC9zdmc+Cg==" alt="Horn Bridge Institute" height="44">
+    </a>
+    <div class="nav__links">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="programs.html" class="nav__link">Programs</a>
+      <a href="research.html" class="nav__link">Research</a>
+      <a href="get-involved.html" class="nav__link">Get Involved</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+      <a href="get-involved.html" class="nav__link nav__cta">Partner With Us</a>
+    </div>
+    <button class="nav__hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="label">Research &amp; Policy</div>
+    <h1>Evidence for a<br>better-educated Horn</h1>
+    <p class="lead">HBI generates rigorous research on education access, quality, equity, and financing — informing the AU Commission, Ethiopian Ministry of Education, and international partners.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="label">Research Agenda</div>
+      <h2>What we study</h2>
+      <p class="lead">Our research addresses the most critical knowledge gaps in Horn of Africa education policy and practice.</p>
+    </div>
+    <div class="grid-3 reveal-stagger">
+      <div class="focus-area">
+        <div class="focus-area__num">01</div>
+        <h4>Learning Poverty &amp; Outcomes</h4>
+        <p class="mt-8" style="font-size:0.9rem;">Measuring literacy and numeracy outcomes, tracking learning poverty reduction, and identifying what works in foundational education in Ethiopian contexts.</p>
+        <span class="badge badge--green mt-16">Quantitative Research</span>
+      </div>
+      <div class="focus-area">
+        <div class="focus-area__num">02</div>
+        <h4>Teacher Quality &amp; Professional Development</h4>
+        <p class="mt-8" style="font-size:0.9rem;">What teacher training approaches produce lasting improvements in classroom practice? What motivates and retains teachers in rural Ethiopia?</p>
+        <span class="badge badge--green mt-16">Mixed Methods</span>
+      </div>
+      <div class="focus-area">
+        <div class="focus-area__num">03</div>
+        <h4>Girls' Education &amp; Gender Equity</h4>
+        <p class="mt-8" style="font-size:0.9rem;">Documenting barriers to girls' education across different regions and communities, and evaluating the effectiveness of different intervention approaches.</p>
+        <span class="badge badge--amber mt-16">Qualitative Research</span>
+      </div>
+      <div class="focus-area">
+        <div class="focus-area__num">04</div>
+        <h4>Digital Learning &amp; EdTech Effectiveness</h4>
+        <p class="mt-8" style="font-size:0.9rem;">Evaluating the impact of technology-assisted learning in low-resource settings. Assessing local language digital content effectiveness.</p>
+        <span class="badge badge--green mt-16">Experimental Design</span>
+      </div>
+      <div class="focus-area">
+        <div class="focus-area__num">05</div>
+        <h4>Education Financing &amp; Policy</h4>
+        <p class="mt-8" style="font-size:0.9rem;">Analysis of Ethiopia's education budget, NGO funding flows, and policy alignment with AU CESA and Decade of Education commitments.</p>
+        <span class="badge badge--amber mt-16">Policy Analysis</span>
+      </div>
+      <div class="focus-area">
+        <div class="focus-area__num">06</div>
+        <h4>Horn of Africa Regional Education</h4>
+        <p class="mt-8" style="font-size:0.9rem;">Comparative education data and cross-border learning across Ethiopia, Somalia, Djibouti, Eritrea, Kenya, and Sudan.</p>
+        <span class="badge badge--green mt-16">Comparative Research</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="label">Publications</div>
+      <h2>Knowledge we are building</h2>
+      <p class="lead">HBI targets 20 research publications by 2030. The following represent our planned publication pipeline — forthcoming as HBI programs launch.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;" class="reveal-stagger">
+      <div class="pub-card">
+        <div class="pub-card__type" style="background:var(--green-50);">📊</div>
+        <div>
+          <div class="pub-card__meta">Baseline Report · 2025 · Forthcoming</div>
+          <div class="pub-card__title">Learning Poverty in the Horn of Africa: A Baseline Analysis of Ethiopia's Education Landscape, 2025</div>
+          <div class="pub-card__excerpt">Establishing HBI's baseline data on foundational literacy rates, out-of-school children, and teacher quality across HBI target regions, aligned with AU CESA monitoring indicators.</div>
+          <div class="pub-card__footer"><span class="badge badge--green">Foundational Learning</span><span class="badge badge--ink">Ethiopia</span></div>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-card__type" style="background:var(--amber-100);">📋</div>
+        <div>
+          <div class="pub-card__meta">Policy Brief · 2026 · Forthcoming</div>
+          <div class="pub-card__title">Aligning Ethiopia's Education Sector Development Programme with the AU Decade of Education 2025–2034: Gaps, Opportunities, and Recommendations</div>
+          <div class="pub-card__excerpt">A policy analysis for the Ethiopian Ministry of Education and AU Commission examining alignment between national and continental education frameworks.</div>
+          <div class="pub-card__footer"><span class="badge badge--green">Policy</span><span class="badge badge--amber">AU Alignment</span></div>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-card__type" style="background:var(--ink-50);">🔬</div>
+        <div>
+          <div class="pub-card__meta">Research Paper · 2026 · Forthcoming</div>
+          <div class="pub-card__title">What Works in Girls' Education in High Child Marriage Regions of Ethiopia: Evidence from HBI's Girls in School Initiative</div>
+          <div class="pub-card__excerpt">An evaluation of HBI's multi-component girls' education program, measuring enrollment, attendance, and retention outcomes disaggregated by intervention type.</div>
+          <div class="pub-card__footer"><span class="badge badge--green">Girls' Education</span><span class="badge badge--ink">Impact Evaluation</span></div>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-card__type" style="background:var(--green-50);">🌍</div>
+        <div>
+          <div class="pub-card__meta">Annual Report · 2026 · Forthcoming</div>
+          <div class="pub-card__title">Horn Bridge Institute Annual Impact Report 2025–2026: Year One</div>
+          <div class="pub-card__excerpt">HBI's first annual impact report covering program reach, learning outcomes, partnerships formed, and financial stewardship — fully transparent and publicly available.</div>
+          <div class="pub-card__footer"><span class="badge badge--green">Annual Report</span><span class="badge badge--amber">Open Access</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <div class="label">Policy Engagement</div>
+      <h2>From research to policy to change</h2>
+    </div>
+    <div class="grid-3 reveal-stagger">
+      <div class="card card--dark">
+        <div class="card__icon">🏛️</div>
+        <h4>AU Commission</h4>
+        <p>HBI participates in AU Decade of Education implementation dialogues and contributes evidence to CESA 2026–2035 monitoring processes.</p>
+      </div>
+      <div class="card card--dark">
+        <div class="card__icon">🇪🇹</div>
+        <h4>Ethiopia Ministry of Education</h4>
+        <p>HBI engages the MoE on Education Sector Development Programme alignment and shares program evaluation evidence for national scale-up consideration.</p>
+      </div>
+      <div class="card card--dark">
+        <div class="card__icon">🌐</div>
+        <h4>International Partners</h4>
+        <p>HBI contributes to UNESCO, UNICEF, and GPE-KIX continental education research networks and participates in pan-African education conferences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <div class="label" style="justify-content:center;color:var(--green-300);">Research Collaboration</div>
+    <h2>Interested in collaborating on research?</h2>
+    <p>HBI welcomes research partnerships with universities, think tanks, and international organizations working on Horn of Africa education.</p>
+    <a href="contact.html" class="btn btn--amber btn--lg">Get In Touch</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyMCIgdmlld0JveD0iMCAwIDQwMCAyMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHRpdGxlPkhvcm4gQnJpZGdlIEluc3RpdHV0ZSDigJQgUHJpbWFyeSBTdGFja2VkIExvZ288L3RpdGxlPgogIDxkZXNjPkZ1bGwgY29sb3Igc3RhY2tlZCBsb2dvIGZvciBIb3JuIEJyaWRnZSBJbnN0aXR1dGU8L2Rlc2M+CgogIDwhLS0gQnJpZGdlIGFyY2ggLS0+CiAgPHBhdGggZD0iTTg4IDExOCBRMjAwIDQ4IDMxMiAxMTgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFEOUU3NSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8IS0tIEJyaWRnZSBkZWNrIC0tPgogIDxsaW5lIHgxPSI4NCIgeTE9IjExOCIgeDI9IjMxNiIgeTI9IjExOCIgc3Ryb2tlPSIjMEY2RTU2IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CgogIDwhLS0gUGlsbGFyIDEgLS0+CiAgPHJlY3QgeD0iOTgiIHk9Ijk3IiB3aWR0aD0iNyIgaGVpZ2h0PSIyMSIgcng9IjIiIGZpbGw9IiM5RkUxQ0IiLz4KICA8Y2lyY2xlIGN4PSIxMDEiIGN5PSI5MyIgcj0iNiIgZmlsbD0iIzlGRTFDQiIvPgogIDwhLS0gUGlsbGFyIDIgLS0+CiAgPHJlY3QgeD0iMTI1IiB5PSI4NSIgd2lkdGg9IjcuNSIgaGVpZ2h0PSIzMyIgcng9IjIiIGZpbGw9IiM1RENBQTUiLz4KICA8Y2lyY2xlIGN4PSIxMjgiIGN5PSI4MSIgcj0iNi41IiBmaWxsPSIjNURDQUE1Ii8+CiAgPCEtLSBQaWxsYXIgMyBjZW50ZXIgLS0+CiAgPHJlY3QgeD0iMTk2IiB5PSI3NyIgd2lkdGg9IjgiIGhlaWdodD0iNDEiIHJ4PSIyIiBmaWxsPSIjMUQ5RTc1Ii8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iNzIiIHI9IjcuNSIgZmlsbD0iIzFEOUU3NSIvPgogIDwhLS0gUGlsbGFyIDQgLS0+CiAgPHJlY3QgeD0iMjY3IiB5PSI4NSIgd2lkdGg9IjcuNSIgaGVpZ2h0PSIzMyIgcng9IjIiIGZpbGw9IiM1RENBQTUiLz4KICA8Y2lyY2xlIGN4PSIyNzEiIGN5PSI4MSIgcj0iNi41IiBmaWxsPSIjNURDQUE1Ii8+CiAgPCEtLSBQaWxsYXIgNSAtLT4KICA8cmVjdCB4PSIyOTUiIHk9Ijk3IiB3aWR0aD0iNyIgaGVpZ2h0PSIyMSIgcng9IjIiIGZpbGw9IiM5RkUxQ0IiLz4KICA8Y2lyY2xlIGN4PSIyOTgiIGN5PSI5MyIgcj0iNiIgZmlsbD0iIzlGRTFDQiIvPgoKICA8IS0tIFN1c3BlbnNpb24gY2FibGVzIC0tPgogIDxsaW5lIHgxPSIxMjgiIHkxPSI3MiIgeDI9IjEyOCIgeTI9IjExOCIgc3Ryb2tlPSIjMEY2RTU2IiBzdHJva2Utd2lkdGg9IjAuOSIgc3Ryb2tlLWRhc2hhcnJheT0iMi41LDIuNSIgb3BhY2l0eT0iMC40NSIvPgogIDxsaW5lIHgxPSIyMDAiIHkxPSI2MyIgeDI9IjIwMCIgeTI9IjExOCIgc3Ryb2tlPSIjMEY2RTU2IiBzdHJva2Utd2lkdGg9IjAuOSIgc3Ryb2tlLWRhc2hhcnJheT0iMi41LDIuNSIgb3BhY2l0eT0iMC40NSIvPgogIDxsaW5lIHgxPSIyNzEiIHkxPSI3MiIgeDI9IjI3MSIgeTI9IjExOCIgc3Ryb2tlPSIjMEY2RTU2IiBzdHJva2Utd2lkdGg9IjAuOSIgc3Ryb2tlLWRhc2hhcnJheT0iMi41LDIuNSIgb3BhY2l0eT0iMC40NSIvPgoKICA8IS0tIFN1biBnbG93IC0tPgogIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjU2IiByPSIxMiIgZmlsbD0iI0VGOUYyNyIgb3BhY2l0eT0iMC4xNSIvPgogIDwhLS0gU3VuIGNvcmUgLS0+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iNTYiIHI9IjciIGZpbGw9IiNFRjlGMjciLz4KICA8IS0tIFN1biByYXlzIC0tPgogIDxsaW5lIHgxPSIyMDAiIHkxPSI0NCIgeDI9IjIwMCIgeTI9IjQwIiBzdHJva2U9IiNFRjlGMjciIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iMjAwIiB5MT0iNjgiIHgyPSIyMDAiIHkyPSI3MiIgc3Ryb2tlPSIjRUY5RjI3IiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9IjE4OCIgeTE9IjU2IiB4Mj0iMTg0IiB5Mj0iNTYiIHN0cm9rZT0iI0VGOUYyNyIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxsaW5lIHgxPSIyMTIiIHkxPSI1NiIgeDI9IjIxNiIgeTI9IjU2IiBzdHJva2U9IiNFRjlGMjciIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iMTkxIiB5MT0iNDciIHgyPSIxODgiIHkyPSI0NCIgc3Ryb2tlPSIjRUY5RjI3IiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9IjIwOSIgeTE9IjQ3IiB4Mj0iMjEyIiB5Mj0iNDQiIHN0cm9rZT0iI0VGOUYyNyIgc3Ryb2tlLXdpZHRoPSIxLjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxsaW5lIHgxPSIxOTEiIHkxPSI2NSIgeDI9IjE4OCIgeTI9IjY4IiBzdHJva2U9IiNFRjlGMjciIHN0cm9rZS13aWR0aD0iMS4zIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iMjA5IiB5MT0iNjUiIHgyPSIyMTIiIHkyPSI2OCIgc3Ryb2tlPSIjRUY5RjI3IiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CgogIDwhLS0gV29yZG1hcmsgLS0+CiAgPHRleHQgeD0iMjAwIiB5PSIxNDciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCdUaW1lcyBOZXcgUm9tYW4nLHNlcmlmIiBmb250LXNpemU9IjI4IiBmb250LXdlaWdodD0iNzAwIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iIzBGNkU1NiI+SG9ybiBCcmlkZ2U8L3RleHQ+CiAgPCEtLSBEaXZpZGVyIC0tPgogIDxsaW5lIHgxPSIxMTgiIHkxPSIxNTUiIHgyPSIyODIiIHkyPSIxNTUiIHN0cm9rZT0iIzFEOUU3NSIgc3Ryb2tlLXdpZHRoPSIwLjYiIG9wYWNpdHk9IjAuNSIvPgogIDwhLS0gSW5zdGl0dXRlIC0tPgogIDx0ZXh0IHg9IjIwMCIgeT0iMTcyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwnVGltZXMgTmV3IFJvbWFuJyxzZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjQwMCIgbGV0dGVyLXNwYWNpbmc9IjUiIGZpbGw9IiM1RENBQTUiPklOU1RJVFVURTwvdGV4dD4KICA8IS0tIFRhZ2xpbmUgLS0+CiAgPHRleHQgeD0iMjAwIiB5PSIxOTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSI5LjUiIGZpbGw9IiM4ODg3ODAiIGxldHRlci1zcGFjaW5nPSIwLjQiPkJyaWRnaW5nIGtub3dsZWRnZSBhY3Jvc3MgdGhlIEhvcm4gb2YgQWZyaWNhPC90ZXh0Pgo8L3N2Zz4K" alt="Horn Bridge Institute" class="footer__logo" height="60">
+        <p class="footer__tagline">Bridging knowledge across the Horn of Africa through transformative education programs aligned with the AU Decade of Education 2025–2034.</p>
+        <div class="footer__au-badge"><span>🌍</span><span>African Union Decade of Education Partner</span></div>
+      </div>
+      <div class="footer__col">
+        <h5>Programs</h5>
+        <div class="footer__links">
+          <a href="programs.html#foundational" class="footer__link">Foundational Learning</a>
+          <a href="programs.html#teacher" class="footer__link">Teacher Excellence</a>
+          <a href="programs.html#girls" class="footer__link">Girls in School</a>
+          <a href="programs.html#digital" class="footer__link">Digital Learning</a>
+          <a href="programs.html#tvet" class="footer__link">TVET &amp; Skills</a>
+          <a href="research.html" class="footer__link">Research &amp; Policy</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h5>Organization</h5>
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About HBI</a>
+          <a href="about.html#mission" class="footer__link">Mission &amp; Vision</a>
+          <a href="about.html#team" class="footer__link">Leadership</a>
+          <a href="about.html#au-alignment" class="footer__link">AU Alignment</a>
+          <a href="about.html#legal" class="footer__link">Legal &amp; Governance</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h5>Connect</h5>
+        <div class="footer__links">
+          <a href="get-involved.html" class="footer__link">Partner With Us</a>
+          <a href="get-involved.html#donate" class="footer__link">Support Our Work</a>
+          <a href="get-involved.html#volunteer" class="footer__link">Volunteer</a>
+          <a href="research.html" class="footer__link">Publications</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2025 Horn Bridge Institute. Registered in Minnesota, USA (501(c)(3) pending) and Ethiopia (CSO Proclamation No. 1113/2019).</p>
+      <div class="footer__legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Safeguarding</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

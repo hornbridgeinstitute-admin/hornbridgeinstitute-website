@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Contact — Horn Bridge Institute</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:80px; align-items:start; }
+    .contact-info-item { display:flex; gap:16px; align-items:flex-start; padding:20px 0; border-bottom:1px solid var(--ink-50); }
+    .contact-info-item:last-child { border-bottom:none; }
+    .contact-info-item__icon { width:44px; height:44px; border-radius:var(--radius-md); background:var(--green-50); display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+    .contact-info-item h5 { font-family:var(--font-body); font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-300); margin-bottom:4px; }
+    .contact-info-item p { font-size:0.95rem; color:var(--ink-700); }
+    .form-card { background:var(--white); border:1px solid var(--ink-100); border-radius:var(--radius-xl); padding:40px; box-shadow:var(--shadow-sm); }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .inquiry-btn { width:100%; text-align:left; padding:14px 18px; border-radius:var(--radius-md); border:1.5px solid var(--ink-100); background:var(--white); font-family:var(--font-body); font-size:0.9rem; font-weight:500; color:var(--ink-500); cursor:pointer; transition:all 0.2s; margin-bottom:8px; }
+    .inquiry-btn:hover,.inquiry-btn.selected { border-color:var(--green-700); background:var(--green-50); color:var(--green-700); }
+    @media(max-width:768px) { .contact-grid{grid-template-columns:1fr;gap:40px;} .form-row{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDU2MCAxMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHRpdGxlPkhvcm4gQnJpZGdlIEluc3RpdHV0ZSDigJQgSG9yaXpvbnRhbCBMb2dvPC90aXRsZT4KICA8ZGVzYz5GdWxsIGNvbG9yIGhvcml6b250YWwgbG9nbyBmb3IgSG9ybiBCcmlkZ2UgSW5zdGl0dXRlPC9kZXNjPgoKICA8IS0tIEJyaWRnZSBhcmNoIC0tPgogIDxwYXRoIGQ9Ik0yOCA4MiBROTAgMzIgMTUyIDgyIiBmaWxsPSJub25lIiBzdHJva2U9IiMxRDlFNzUiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8IS0tIEJyaWRnZSBkZWNrIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjgyIiB4Mj0iMTU2IiB5Mj0iODIiIHN0cm9rZT0iIzBGNkU1NiIgc3Ryb2tlLXdpZHRoPSIxLjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgoKICA8IS0tIFBpbGxhciAxIC0tPgogIDxyZWN0IHg9IjM1IiB5PSI2NiIgd2lkdGg9IjUuNSIgaGVpZ2h0PSIxNiIgcng9IjEuNSIgZmlsbD0iIzlGRTFDQiIvPgogIDxjaXJjbGUgY3g9IjM3IiBjeT0iNjMiIHI9IjQuNSIgZmlsbD0iIzlGRTFDQiIvPgogIDwhLS0gUGlsbGFyIDIgLS0+CiAgPHJlY3QgeD0iNTciIHk9IjU4IiB3aWR0aD0iNiIgaGVpZ2h0PSIyNCIgcng9IjEuNSIgZmlsbD0iIzVEQ0FBNSIvPgogIDxjaXJjbGUgY3g9IjYwIiBjeT0iNTUiIHI9IjUiIGZpbGw9IiM1RENBQTUiLz4KICA8IS0tIFBpbGxhciAzIGNlbnRlciAtLT4KICA8cmVjdCB4PSI4NyIgeT0iNTIiIHdpZHRoPSI2LjUiIGhlaWdodD0iMzAiIHJ4PSIxLjUiIGZpbGw9IiMxRDlFNzUiLz4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjQ4IiByPSI1LjUiIGZpbGw9IiMxRDlFNzUiLz4KICA8IS0tIFBpbGxhciA0IC0tPgogIDxyZWN0IHg9IjExNyIgeT0iNTgiIHdpZHRoPSI2IiBoZWlnaHQ9IjI0IiByeD0iMS41IiBmaWxsPSIjNURDQUE1Ii8+CiAgPGNpcmNsZSBjeD0iMTIwIiBjeT0iNTUiIHI9IjUiIGZpbGw9IiM1RENBQTUiLz4KICA8IS0tIFBpbGxhciA1IC0tPgogIDxyZWN0IHg9IjEzOSIgeT0iNjYiIHdpZHRoPSI1LjUiIGhlaWdodD0iMTYiIHJ4PSIxLjUiIGZpbGw9IiM5RkUxQ0IiLz4KICA8Y2lyY2xlIGN4PSIxNDEiIGN5PSI2MyIgcj0iNC41IiBmaWxsPSIjOUZFMUNCIi8+CgogIDwhLS0gQ2FibGVzIC0tPgogIDxsaW5lIHgxPSI2MCIgeTE9IjQ2IiB4Mj0iNjAiIHkyPSI4MiIgc3Ryb2tlPSIjMEY2RTU2IiBzdHJva2Utd2lkdGg9IjAuNyIgc3Ryb2tlLWRhc2hhcnJheT0iMiwyIiBvcGFjaXR5PSIwLjQiLz4KICA8bGluZSB4MT0iOTAiIHkxPSI0MCIgeDI9IjkwIiB5Mj0iODIiIHN0cm9rZT0iIzBGNkU1NiIgc3Ryb2tlLXdpZHRoPSIwLjciIHN0cm9rZS1kYXNoYXJyYXk9IjIsMiIgb3BhY2l0eT0iMC40Ii8+CiAgPGxpbmUgeDE9IjEyMCIgeTE9IjQ2IiB4Mj0iMTIwIiB5Mj0iODIiIHN0cm9rZT0iIzBGNkU1NiIgc3Ryb2tlLXdpZHRoPSIwLjciIHN0cm9rZS1kYXNoYXJyYXk9IjIsMiIgb3BhY2l0eT0iMC40Ii8+CgogIDwhLS0gU3VuIC0tPgogIDxjaXJjbGUgY3g9IjkwIiBjeT0iMzQiIHI9IjgiIGZpbGw9IiNFRjlGMjciIG9wYWNpdHk9IjAuMTUiLz4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjM0IiByPSI1LjUiIGZpbGw9IiNFRjlGMjciLz4KICA8bGluZSB4MT0iOTAiIHkxPSIyNSIgeDI9IjkwIiB5Mj0iMjIiIHN0cm9rZT0iI0VGOUYyNyIgc3Ryb2tlLXdpZHRoPSIxLjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxsaW5lIHgxPSI5MCIgeTE9IjQzIiB4Mj0iOTAiIHkyPSI0NiIgc3Ryb2tlPSIjRUY5RjI3IiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9IjgxIiB5MT0iMzQiIHgyPSI3OCIgeTI9IjM0IiBzdHJva2U9IiNFRjlGMjciIHN0cm9rZS13aWR0aD0iMS4zIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iOTkiIHkxPSIzNCIgeDI9IjEwMiIgeTI9IjM0IiBzdHJva2U9IiNFRjlGMjciIHN0cm9rZS13aWR0aD0iMS4zIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iODQiIHkxPSIyNyIgeDI9IjgxIiB5Mj0iMjQiIHN0cm9rZT0iI0VGOUYyNyIgc3Ryb2tlLXdpZHRoPSIxLjEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxsaW5lIHgxPSI5NiIgeTE9IjI3IiB4Mj0iOTkiIHkyPSIyNCIgc3Ryb2tlPSIjRUY5RjI3IiBzdHJva2Utd2lkdGg9IjEuMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9Ijg0IiB5MT0iNDEiIHgyPSI4MSIgeTI9IjQ0IiBzdHJva2U9IiNFRjlGMjciIHN0cm9rZS13aWR0aD0iMS4xIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iOTYiIHkxPSI0MSIgeDI9Ijk5IiB5Mj0iNDQiIHN0cm9rZT0iI0VGOUYyNyIgc3Ryb2tlLXdpZHRoPSIxLjEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgoKICA8IS0tIFZlcnRpY2FsIGRpdmlkZXIgLS0+CiAgPGxpbmUgeDE9IjE3OCIgeTE9IjE2IiB4Mj0iMTc4IiB5Mj0iMTA0IiBzdHJva2U9IiNCNEIyQTkiIHN0cm9rZS13aWR0aD0iMC41Ii8+CgogIDwhLS0gV29yZG1hcmsgLS0+CiAgPHRleHQgeD0iMjAwIiB5PSI1NSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsJ1RpbWVzIE5ldyBSb21hbicsc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSIxIiBmaWxsPSIjMEY2RTU2Ij5Ib3JuIEJyaWRnZTwvdGV4dD4KICA8IS0tIERpdmlkZXIgdW5kZXIgd29yZG1hcmsgLS0+CiAgPGxpbmUgeDE9IjIwMCIgeTE9IjYzIiB4Mj0iNTQwIiB5Mj0iNjMiIHN0cm9rZT0iIzFEOUU3NSIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuNCIvPgogIDwhLS0gSW5zdGl0dXRlIC0tPgogIDx0ZXh0IHg9IjIwMCIgeT0iNzkiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCdUaW1lcyBOZXcgUm9tYW4nLHNlcmlmIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNDAwIiBsZXR0ZXItc3BhY2luZz0iNSIgZmlsbD0iIzVEQ0FBNSI+SU5TVElUVVRFPC90ZXh0PgogIDwhLS0gVGFnbGluZSAtLT4KICA8dGV4dCB4PSIyMDAiIHk9Ijk4IiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iOS41IiBmaWxsPSIjODg4NzgwIiBsZXR0ZXItc3BhY2luZz0iMC4zIj5CcmlkZ2luZyBrbm93bGVkZ2UgYWNyb3NzIHRoZSBIb3JuIG9mIEFmcmljYTwvdGV4dD4KPC9zdmc+Cg==" alt="Horn Bridge Institute" height="44">
+    </a>
+    <div class="nav__links">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="programs.html" class="nav__link">Programs</a>
+      <a href="research.html" class="nav__link">Research</a>
+      <a href="get-involved.html" class="nav__link">Get Involved</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+      <a href="get-involved.html" class="nav__link nav__cta">Partner With Us</a>
+    </div>
+    <button class="nav__hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="label">Contact</div>
+    <h1>Let's build something<br>meaningful together</h1>
+    <p class="lead">Whether you want to partner, donate, volunteer, or simply learn more about HBI's work — we want to hear from you.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="label">Our Offices</div>
+        <h2 style="font-size:1.8rem;">Find us</h2>
+        <div style="margin-top:32px;">
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon">🇪🇹</div>
+            <div>
+              <h5>Principal Office</h5>
+              <p><strong>Horn Bridge Institute</strong><br>Addis Ababa, Ethiopia<br>Near African Union Headquarters</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon">🇺🇸</div>
+            <div>
+              <h5>U.S. Office</h5>
+              <p><strong>Horn Bridge Institute</strong><br>Dakota County, Minnesota<br>United States of America</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon">📧</div>
+            <div>
+              <h5>General Inquiries</h5>
+              <p>info@hornbridgeinstitute.org</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon">👤</div>
+            <div>
+              <h5>Executive Director</h5>
+              <p>Abdirahman Jama<br>abdirahman@hornbridgeinstitute.org</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon">📱</div>
+            <div>
+              <h5>Social Media</h5>
+              <p>LinkedIn · Twitter/X · Facebook<br>@HornBridgeInstitute</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:40px;padding:24px;background:var(--green-50);border-radius:var(--radius-xl);border:1px solid var(--green-100);">
+          <div style="font-size:1.5rem;margin-bottom:12px;">🌍</div>
+          <h4>AU Headquarters Proximity</h4>
+          <p style="font-size:0.88rem;margin-top:8px;">HBI's Addis Ababa office is deliberately located near the African Union Commission headquarters, enabling direct engagement with continental education policy development and AU partner institutions.</p>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <h3 style="margin-bottom:8px;">Send us a message</h3>
+        <p style="font-size:0.9rem;margin-bottom:28px;">We respond to all inquiries within 2 business days.</p>
+
+        <div style="margin-bottom:20px;">
+          <div class="form-label">What is your inquiry about?</div>
+          <button class="inquiry-btn selected" onclick="selectInquiry(this)">🤝 Partnership &amp; Collaboration</button>
+          <button class="inquiry-btn" onclick="selectInquiry(this)">💰 Funding &amp; Donations</button>
+          <button class="inquiry-btn" onclick="selectInquiry(this)">🎓 Board &amp; Governance</button>
+          <button class="inquiry-btn" onclick="selectInquiry(this)">📚 Research &amp; Publications</button>
+          <button class="inquiry-btn" onclick="selectInquiry(this)">✍️ Volunteer &amp; Consulting</button>
+          <button class="inquiry-btn" onclick="selectInquiry(this)">📰 Media &amp; Press</button>
+          <button class="inquiry-btn" onclick="selectInquiry(this)">💬 General Inquiry</button>
+        </div>
+
+        <form id="contact-form" onsubmit="handleSubmit(event)">
+          <input type="hidden" id="inquiry-type" value="Partnership &amp; Collaboration">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fname">First Name *</label>
+              <input class="form-input" type="text" id="fname" required placeholder="Your first name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lname">Last Name *</label>
+              <input class="form-input" type="text" id="lname" required placeholder="Your last name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address *</label>
+            <input class="form-input" type="email" id="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="org">Organization</label>
+            <input class="form-input" type="text" id="org" placeholder="Your organization (optional)">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="country">Country</label>
+            <select class="form-select" id="country">
+              <option value="">Select your country</option>
+              <option>Ethiopia</option>
+              <option>United States</option>
+              <option>Somalia</option>
+              <option>Kenya</option>
+              <option>Djibouti</option>
+              <option>Eritrea</option>
+              <option>Sudan</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message *</label>
+            <textarea class="form-textarea" id="message" required placeholder="Tell us about your interest in Horn Bridge Institute..." style="min-height:140px;"></textarea>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:24px;">
+            <input type="checkbox" id="consent" required style="margin-top:4px;accent-color:var(--green-700);">
+            <label for="consent" style="font-size:0.85rem;color:var(--ink-500);">I agree to HBI storing my details to respond to this inquiry. We never share your information with third parties.</label>
+          </div>
+          <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;" id="submit-btn">Send Message →</button>
+          <div id="form-success" style="display:none;margin-top:16px;padding:16px;background:var(--green-50);border-radius:var(--radius-md);border:1px solid var(--green-200);text-align:center;">
+            <p style="color:var(--green-800);font-weight:600;">✓ Message sent! We will respond within 2 business days.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <div class="label">Frequently Asked</div>
+      <h2>Common questions</h2>
+    </div>
+    <div class="grid-2 reveal-stagger">
+      <div style="padding:28px;border-radius:var(--radius-xl);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+        <h4 style="color:var(--amber-300);margin-bottom:12px;">Is HBI accepting grant applications?</h4>
+        <p style="font-size:0.9rem;">HBI is currently seeking funding partners, not administering grants to others. We are building our program portfolio and welcome donor conversations.</p>
+      </div>
+      <div style="padding:28px;border-radius:var(--radius-xl);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+        <h4 style="color:var(--amber-300);margin-bottom:12px;">How do I apply for HBI programs as a beneficiary?</h4>
+        <p style="font-size:0.9rem;">HBI works through community and government channels. Contact our Ethiopia office or reach out via this form and we'll connect you with relevant program contacts.</p>
+      </div>
+      <div style="padding:28px;border-radius:var(--radius-xl);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+        <h4 style="color:var(--amber-300);margin-bottom:12px;">Is my donation tax-deductible?</h4>
+        <p style="font-size:0.9rem;">HBI is incorporated in the U.S. with 501(c)(3) status pending. Once approved, U.S. donations will be fully tax-deductible. Contact us for current donation arrangements.</p>
+      </div>
+      <div style="padding:28px;border-radius:var(--radius-xl);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+        <h4 style="color:var(--amber-300);margin-bottom:12px;">Can diaspora community members get involved?</h4>
+        <p style="font-size:0.9rem;">Absolutely — HBI was founded by a diaspora community member and deeply values the contribution of the Somali and Ethiopian diaspora. Contact us about how to engage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyMCIgdmlld0JveD0iMCAwIDQwMCAyMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHRpdGxlPkhvcm4gQnJpZGdlIEluc3RpdHV0ZSDigJQgUHJpbWFyeSBTdGFja2VkIExvZ288L3RpdGxlPgogIDxkZXNjPkZ1bGwgY29sb3Igc3RhY2tlZCBsb2dvIGZvciBIb3JuIEJyaWRnZSBJbnN0aXR1dGU8L2Rlc2M+CgogIDwhLS0gQnJpZGdlIGFyY2ggLS0+CiAgPHBhdGggZD0iTTg4IDExOCBRMjAwIDQ4IDMxMiAxMTgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFEOUU3NSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8IS0tIEJyaWRnZSBkZWNrIC0tPgogIDxsaW5lIHgxPSI4NCIgeTE9IjExOCIgeDI9IjMxNiIgeTI9IjExOCIgc3Ryb2tlPSIjMEY2RTU2IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CgogIDwhLS0gUGlsbGFyIDEgLS0+CiAgPHJlY3QgeD0iOTgiIHk9Ijk3IiB3aWR0aD0iNyIgaGVpZ2h0PSIyMSIgcng9IjIiIGZpbGw9IiM5RkUxQ0IiLz4KICA8Y2lyY2xlIGN4PSIxMDEiIGN5PSI5MyIgcj0iNiIgZmlsbD0iIzlGRTFDQiIvPgogIDwhLS0gUGlsbGFyIDIgLS0+CiAgPHJlY3QgeD0iMTI1IiB5PSI4NSIgd2lkdGg9IjcuNSIgaGVpZ2h0PSIzMyIgcng9IjIiIGZpbGw9IiM1RENBQTUiLz4KICA8Y2lyY2xlIGN4PSIxMjgiIGN5PSI4MSIgcj0iNi41IiBmaWxsPSIjNURDQUE1Ii8+CiAgPCEtLSBQaWxsYXIgMyBjZW50ZXIgLS0+CiAgPHJlY3QgeD0iMTk2IiB5PSI3NyIgd2lkdGg9IjgiIGhlaWdodD0iNDEiIHJ4PSIyIiBmaWxsPSIjMUQ5RTc1Ii8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iNzIiIHI9IjcuNSIgZmlsbD0iIzFEOUU3NSIvPgogIDwhLS0gUGlsbGFyIDQgLS0+CiAgPHJlY3QgeD0iMjY3IiB5PSI4NSIgd2lkdGg9IjcuNSIgaGVpZ2h0PSIzMyIgcng9IjIiIGZpbGw9IiM1RENBQTUiLz4KICA8Y2lyY2xlIGN4PSIyNzEiIGN5PSI4MSIgcj0iNi41IiBmaWxsPSIjNURDQUE1Ii8+CiAgPCEtLSBQaWxsYXIgNSAtLT4KICA8cmVjdCB4PSIyOTUiIHk9Ijk3IiB3aWR0aD0iNyIgaGVpZ2h0PSIyMSIgcng9IjIiIGZpbGw9IiM5RkUxQ0IiLz4KICA8Y2lyY2xlIGN4PSIyOTgiIGN5PSI5MyIgcj0iNiIgZmlsbD0iIzlGRTFDQiIvPgoKICA8IS0tIFN1c3BlbnNpb24gY2FibGVzIC0tPgogIDxsaW5lIHgxPSIxMjgiIHkxPSI3MiIgeDI9IjEyOCIgeTI9IjExOCIgc3Ryb2tlPSIjMEY2RTU2IiBzdHJva2Utd2lkdGg9IjAuOSIgc3Ryb2tlLWRhc2hhcnJheT0iMi41LDIuNSIgb3BhY2l0eT0iMC40NSIvPgogIDxsaW5lIHgxPSIyMDAiIHkxPSI2MyIgeDI9IjIwMCIgeTI9IjExOCIgc3Ryb2tlPSIjMEY2RTU2IiBzdHJva2Utd2lkdGg9IjAuOSIgc3Ryb2tlLWRhc2hhcnJheT0iMi41LDIuNSIgb3BhY2l0eT0iMC40NSIvPgogIDxsaW5lIHgxPSIyNzEiIHkxPSI3MiIgeDI9IjI3MSIgeTI9IjExOCIgc3Ryb2tlPSIjMEY2RTU2IiBzdHJva2Utd2lkdGg9IjAuOSIgc3Ryb2tlLWRhc2hhcnJheT0iMi41LDIuNSIgb3BhY2l0eT0iMC40NSIvPgoKICA8IS0tIFN1biBnbG93IC0tPgogIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjU2IiByPSIxMiIgZmlsbD0iI0VGOUYyNyIgb3BhY2l0eT0iMC4xNSIvPgogIDwhLS0gU3VuIGNvcmUgLS0+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iNTYiIHI9IjciIGZpbGw9IiNFRjlGMjciLz4KICA8IS0tIFN1biByYXlzIC0tPgogIDxsaW5lIHgxPSIyMDAiIHkxPSI0NCIgeDI9IjIwMCIgeTI9IjQwIiBzdHJva2U9IiNFRjlGMjciIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iMjAwIiB5MT0iNjgiIHgyPSIyMDAiIHkyPSI3MiIgc3Ryb2tlPSIjRUY5RjI3IiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9IjE4OCIgeTE9IjU2IiB4Mj0iMTg0IiB5Mj0iNTYiIHN0cm9rZT0iI0VGOUYyNyIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxsaW5lIHgxPSIyMTIiIHkxPSI1NiIgeDI9IjIxNiIgeTI9IjU2IiBzdHJva2U9IiNFRjlGMjciIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iMTkxIiB5MT0iNDciIHgyPSIxODgiIHkyPSI0NCIgc3Ryb2tlPSIjRUY5RjI3IiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9IjIwOSIgeTE9IjQ3IiB4Mj0iMjEyIiB5Mj0iNDQiIHN0cm9rZT0iI0VGOUYyNyIgc3Ryb2tlLXdpZHRoPSIxLjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxsaW5lIHgxPSIxOTEiIHkxPSI2NSIgeDI9IjE4OCIgeTI9IjY4IiBzdHJva2U9IiNFRjlGMjciIHN0cm9rZS13aWR0aD0iMS4zIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iMjA5IiB5MT0iNjUiIHgyPSIyMTIiIHkyPSI2OCIgc3Ryb2tlPSIjRUY5RjI3IiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CgogIDwhLS0gV29yZG1hcmsgLS0+CiAgPHRleHQgeD0iMjAwIiB5PSIxNDciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCdUaW1lcyBOZXcgUm9tYW4nLHNlcmlmIiBmb250LXNpemU9IjI4IiBmb250LXdlaWdodD0iNzAwIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iIzBGNkU1NiI+SG9ybiBCcmlkZ2U8L3RleHQ+CiAgPCEtLSBEaXZpZGVyIC0tPgogIDxsaW5lIHgxPSIxMTgiIHkxPSIxNTUiIHgyPSIyODIiIHkyPSIxNTUiIHN0cm9rZT0iIzFEOUU3NSIgc3Ryb2tlLXdpZHRoPSIwLjYiIG9wYWNpdHk9IjAuNSIvPgogIDwhLS0gSW5zdGl0dXRlIC0tPgogIDx0ZXh0IHg9IjIwMCIgeT0iMTcyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwnVGltZXMgTmV3IFJvbWFuJyxzZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjQwMCIgbGV0dGVyLXNwYWNpbmc9IjUiIGZpbGw9IiM1RENBQTUiPklOU1RJVFVURTwvdGV4dD4KICA8IS0tIFRhZ2xpbmUgLS0+CiAgPHRleHQgeD0iMjAwIiB5PSIxOTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSI5LjUiIGZpbGw9IiM4ODg3ODAiIGxldHRlci1zcGFjaW5nPSIwLjQiPkJyaWRnaW5nIGtub3dsZWRnZSBhY3Jvc3MgdGhlIEhvcm4gb2YgQWZyaWNhPC90ZXh0Pgo8L3N2Zz4K" alt="Horn Bridge Institute" class="footer__logo" height="60">
+        <p class="footer__tagline">Bridging knowledge across the Horn of Africa through transformative education programs aligned with the AU Decade of Education 2025–2034.</p>
+        <div class="footer__au-badge"><span>🌍</span><span>African Union Decade of Education Partner</span></div>
+      </div>
+      <div class="footer__col">
+        <h5>Programs</h5>
+        <div class="footer__links">
+          <a href="programs.html#foundational" class="footer__link">Foundational Learning</a>
+          <a href="programs.html#teacher" class="footer__link">Teacher Excellence</a>
+          <a href="programs.html#girls" class="footer__link">Girls in School</a>
+          <a href="programs.html#digital" class="footer__link">Digital Learning</a>
+          <a href="programs.html#tvet" class="footer__link">TVET &amp; Skills</a>
+          <a href="research.html" class="footer__link">Research &amp; Policy</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h5>Organization</h5>
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About HBI</a>
+          <a href="about.html#mission" class="footer__link">Mission &amp; Vision</a>
+          <a href="about.html#team" class="footer__link">Leadership</a>
+          <a href="about.html#au-alignment" class="footer__link">AU Alignment</a>
+          <a href="about.html#legal" class="footer__link">Legal &amp; Governance</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h5>Connect</h5>
+        <div class="footer__links">
+          <a href="get-involved.html" class="footer__link">Partner With Us</a>
+          <a href="get-involved.html#donate" class="footer__link">Support Our Work</a>
+          <a href="get-involved.html#volunteer" class="footer__link">Volunteer</a>
+          <a href="research.html" class="footer__link">Publications</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2025 Horn Bridge Institute. Registered in Minnesota, USA (501(c)(3) pending) and Ethiopia (CSO Proclamation No. 1113/2019).</p>
+      <div class="footer__legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Safeguarding</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+function selectInquiry(btn) {
+  document.querySelectorAll('.inquiry-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  document.getElementById('inquiry-type').value = btn.textContent.trim();
+}
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  setTimeout(() => {
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }, 1200);
+}
+</script>
+</body>
+</html>
