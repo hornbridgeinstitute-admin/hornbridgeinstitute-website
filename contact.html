@@ -2,13 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <meta name="theme-color" content="#0F6E56">
   <title>Contact — Horn Bridge Institute</title>
   <link rel="stylesheet" href="css/main.css">
   <style>
@@ -69,13 +62,6 @@
             </div>
           </div>
           <div class="contact-info-item">
-            <div class="contact-info-item__icon">🇺🇸</div>
-            <div>
-              <h5>U.S. Office</h5>
-              <p><strong>Horn Bridge Institute</strong><br>Dakota County, Minnesota<br>United States of America</p>
-            </div>
-          </div>
-          <div class="contact-info-item">
             <div class="contact-info-item__icon">📧</div>
             <div>
               <h5>General Inquiries</h5>
@@ -86,7 +72,7 @@
             <div class="contact-info-item__icon">📱</div>
             <div>
               <h5>Social Media</h5>
-              <p>LinkedIn · Twitter/X · Facebook<br>@HornBridgeInst</p>
+              <p>LinkedIn · Twitter/X · Facebook<br>@HornBridgeInstitute</p>
             </div>
           </div>
         </div>
@@ -113,29 +99,33 @@
           <button class="inquiry-btn" onclick="selectInquiry(this)">💬 General Inquiry</button>
         </div>
 
-        <form id="contact-form" onsubmit="handleSubmit(event)">
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleSubmit(event)">
+          <input type="hidden" name="access_key" value="96ff1202-586c-40e0-9797-d3419dce1dbb">
+          <input type="hidden" name="subject" value="New HBI Website Inquiry">
+          <input type="hidden" name="from_name" value="Horn Bridge Institute Website">
+          <input type="hidden" name="redirect" value="false">
           <input type="hidden" id="inquiry-type" value="Partnership &amp; Collaboration">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="fname">First Name *</label>
-              <input class="form-input" type="text" id="fname" required placeholder="Your first name">
+              <input class="form-input" type="text" id="fname" name="first_name" required placeholder="Your first name">
             </div>
             <div class="form-group">
               <label class="form-label" for="lname">Last Name *</label>
-              <input class="form-input" type="text" id="lname" required placeholder="Your last name">
+              <input class="form-input" type="text" id="lname" name="last_name" required placeholder="Your last name">
             </div>
           </div>
           <div class="form-group">
             <label class="form-label" for="email">Email Address *</label>
-            <input class="form-input" type="email" id="email" required placeholder="your@email.com">
+            <input class="form-input" type="email" id="email" name="email" required placeholder="your@email.com">
           </div>
           <div class="form-group">
             <label class="form-label" for="org">Organization</label>
-            <input class="form-input" type="text" id="org" placeholder="Your organization (optional)">
+            <input class="form-input" type="text" id="org" name="organization" placeholder="Your organization (optional)">
           </div>
           <div class="form-group">
             <label class="form-label" for="country">Country</label>
-            <select class="form-select" id="country">
+            <select class="form-select" id="country" name="country">
               <option value="">Select your country</option>
               <option>Ethiopia</option>
               <option>United States</option>
@@ -149,7 +139,7 @@
           </div>
           <div class="form-group">
             <label class="form-label" for="message">Message *</label>
-            <textarea class="form-textarea" id="message" required placeholder="Tell us about your interest in Horn Bridge Institute..." style="min-height:140px;"></textarea>
+            <textarea class="form-textarea" id="message" name="message" required placeholder="Tell us about your interest in Horn Bridge Institute..." style="min-height:140px;"></textarea>
           </div>
           <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:24px;">
             <input type="checkbox" id="consent" required style="margin-top:4px;accent-color:var(--green-700);">
@@ -252,12 +242,34 @@ function selectInquiry(btn) {
 function handleSubmit(e) {
   e.preventDefault();
   const btn = document.getElementById('submit-btn');
+  const form = document.getElementById('contact-form');
   btn.textContent = 'Sending...';
   btn.disabled = true;
-  setTimeout(() => {
-    document.getElementById('contact-form').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-  }, 1200);
+
+  const data = new FormData(form);
+  data.append('inquiry_type', document.getElementById('inquiry-type').value);
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      btn.textContent = 'Send Message →';
+      btn.disabled = false;
+      alert('Something went wrong. Please email info@hornbridgeinstitute.org directly.');
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Send Message →';
+    btn.disabled = false;
+    alert('Something went wrong. Please email info@hornbridgeinstitute.org directly.');
+  });
 }
 </script>
 </body>
